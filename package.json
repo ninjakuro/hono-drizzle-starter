@@ -1,14 +1,26 @@
 {
-  "name": "nodejs-typescript-boilerplate",
+  "name": "hono-drizzle-starter",
   "type": "module",
   "scripts": {
     "dev": "tsx watch --env-file=.env src/server.ts",
     "build": "esbuild src/server.ts --bundle --platform=node --packages=external --format=esm --outfile=dist/server.js",
     "check": "tsc --noEmit",
-    "format": "prettier ./src --write"
+    "format": "prettier ./src --write",
+    "studio": "drizzle-kit studio",
+    "push": "drizzle-kit push",
+    "generate": "drizzle-kit generate",
+    "migrate": "drizzle-kit migrate"
+  },
+  "dependencies": {
+    "@hono/node-server": "^1.14.4",
+    "drizzle-orm": "^0.44.2",
+    "hono": "^4.7.11",
+    "pg": "^8.16.0"
   },
   "devDependencies": {
     "@types/node": "^20.19.0",
+    "@types/pg": "^8.15.4",
+    "drizzle-kit": "^0.31.1",
     "esbuild": "^0.25.5",
     "prettier": "3.5.3",
     "tsx": "^4.19.4",
